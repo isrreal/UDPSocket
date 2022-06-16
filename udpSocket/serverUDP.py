@@ -7,5 +7,7 @@ origem = (HOST, PORTA)
 udp.bind(origem)
 while(True):
     print("Esperando cliente...")
+    # recebendo uma tupla contendo a mensagem do cliente
     array = udp.recvfrom(1024)
-    print(f"{array[0].decode()} recebida de {array[1]}")
+    # [0] = mensagem [1] = origem
+    print(f"{array[0].decode()} recebida de {array[1]}") 
